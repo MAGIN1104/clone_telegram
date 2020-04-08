@@ -13,6 +13,7 @@ const kTextItem = TextStyle(
 );
 
 const kNumMensaje = TextStyle(
+
   color: Colors.white
 );
 

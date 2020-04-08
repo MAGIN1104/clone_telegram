@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:telegram_copy/src/constantes.dart';
+import 'package:telegram_copy/src/theme/theme.dart';
 class ItemChat extends StatelessWidget {
 
   ItemChat({@required this.nameContacto, @required this.ultimoMensaje, @required this.hora, this.numMen, this.imagen});
@@ -10,6 +12,7 @@ class ItemChat extends StatelessWidget {
   final AssetImage imagen;
   @override
   Widget build(BuildContext context) {
+    final apptheme=Provider.of<ThemeChanger>(context).currentTheme;
     return ListTile(
       leading: CircleAvatar(
         backgroundImage:imagen,
@@ -28,10 +31,10 @@ class ItemChat extends StatelessWidget {
               height: 20,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Colors.grey[400]
+                color: apptheme.floatingActionButtonTheme.backgroundColor
               ),
               child:
-               Center(child: Text(numMen , style: kNumMensaje,))
+               Center(child: Text(numMen , style:kNumMensaje,))
             )
           ],
         ),

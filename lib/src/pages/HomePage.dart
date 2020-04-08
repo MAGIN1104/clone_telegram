@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             imagen: AssetImage('img/oslo.jpg'),
             nameContacto: Text('Ricardo'),
             ultimoMensaje: Text('Maria: Hola Ric hoy nos vemos en la cena'),
-            hora: Text('15:300', style: kTextHora),
+            hora: Text('15:30', style: kTextHora),
             numMen: '2',
           ),
           Divider(),

@@ -15,6 +15,7 @@ class _DDrawerState extends State<DDrawer> {
   @override
   Widget build(BuildContext context) {
     final apptheme=Provider.of<ThemeChanger>(context);    // la variable con la q cambiaremos los temas
+    final cTheme=Provider.of<ThemeChanger>(context).currentTheme;
 
     return Drawer(
       child:ListView(
@@ -23,7 +24,8 @@ class _DDrawerState extends State<DDrawer> {
           DrawerHeader(
             margin: EdgeInsets.only(bottom: 0.0),
             decoration: BoxDecoration(
-              color: Color(0xff517DA2)
+              color: cTheme.primaryColor
+              //color: Color(0xff517DA2)
             ),
             child:Container(
               child: Row(
