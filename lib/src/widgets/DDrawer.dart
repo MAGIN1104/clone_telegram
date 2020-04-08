@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../theme_provider.dart';
+import 'package:telegram_copy/src/theme/theme.dart';
 import 'MenuItem.dart';
 class DDrawer extends StatefulWidget {
   DDrawer ({@required this.name,@required this.cel});
   final Text name;
   final Text cel;
-
   @override
   _DDrawerState createState() => _DDrawerState();
 }
@@ -16,7 +14,8 @@ class _DDrawerState extends State<DDrawer> {
   bool sw=false;
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    final apptheme=Provider.of<ThemeChanger>(context);    // la variable con la q cambiaremos los temas
+
     return Drawer(
       child:ListView(
         padding: EdgeInsets.zero,
@@ -58,32 +57,31 @@ class _DDrawerState extends State<DDrawer> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        // InkWell(
-                        //   child: IconButton(icon: Icon(
-                        //   Icons.brightness_3,
-                        //   color: Colors.white,
-                        //     ),
-                        //     onPressed: (){
-                        //       setState(() {
-
-                        //       });
-                        //     }            
-                        //   ),
-                        // ),
-                  Switch(
-                  value: themeProvider.isLightTheme,
-                  onChanged: (val) {
-                    themeProvider.setThemeData = val;
+                  // IconButton(icon: Icon(
+                  // Icons.brightness_3,
+                  // color: Colors.white,
+                  //   ),
+                  //   onPressed: (){   
+                  //     setState(() {
+                        
+                  //     });
+                  //   }            
+                  // ),
+                  Switch.adaptive(
+                  value: apptheme.darkTheme,
+                  activeColor: Colors.white,
+                  onChanged: (value) {
+                    apptheme.darkTheme = value;
                   },
                 ),
-                        IconButton(
-                            icon: Icon(Icons.keyboard_arrow_down,color: Colors.white,),
-                          onPressed: (){
-                            setState(() {
-                              sw =! sw;
-                            });
-                           }            
-                        )
+                    IconButton(
+                      icon: Icon(Icons.keyboard_arrow_down,color: Colors.white,),
+                      onPressed: (){
+                        setState(() {
+                          sw =! sw;
+                        });
+                        }            
+                    )
                       ],
                     ),
                   )
