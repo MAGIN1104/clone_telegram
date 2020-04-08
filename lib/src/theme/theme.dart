@@ -31,11 +31,9 @@ class ThemeChanger with ChangeNotifier{
 
     if(value){
         _currentTheme=ThemeData.dark().copyWith(
-        primaryColor:  Color(0xff1F2E3E),
-        scaffoldBackgroundColor: Color(0xff1F2E3E),
-        brightness: Brightness.dark,
+        primaryColor:  Color(0xff1D2733),
+        scaffoldBackgroundColor: Color(0xff212D3B),
         backgroundColor: Color(0xFF000000),
-        accentColor: Color(0xff7CBADD),
         accentIconTheme: IconThemeData(color: Colors.white),
         dividerColor: Colors.black54,
         floatingActionButtonTheme: FloatingActionButtonThemeData(
