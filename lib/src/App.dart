@@ -8,13 +8,6 @@ class MyApp extends StatelessWidget {
     final currentTheme = Provider.of<ThemeChanger>(context).currentTheme;
     return MaterialApp(
       theme: currentTheme,
-      // ThemeData.light().copyWith(
-      //   primaryColor: Color(0xff517DA2),
-      //   accentColor: Color(0xff517DA2)
-      // ),
-      // darkTheme: ThemeData(
-      //   brightness: Brightness.dark,
-      // ),
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
